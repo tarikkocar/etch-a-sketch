@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.grids {
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 600px;
+    outline: 2px solid black;
+}
+
+.square {
+    outline: 0.1px solid black;
+}
