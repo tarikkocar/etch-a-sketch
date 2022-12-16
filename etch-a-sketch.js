@@ -1,9 +1,10 @@
 const grids = document.querySelector(".grids")
 
 // Initial grid
-createGrid(16);
+createGrid(32);
 
 // Create grid with given size
+
 function createGrid(size) {
     grids.innerHTML = "";
     for (let i = 0; i < size*size; i++) {
@@ -13,7 +14,7 @@ function createGrid(size) {
         square.style.width = `${600/size}px`;
         grids.appendChild(square);
     }
-    paint();
+    paint(); // Making newly created cells paintable
 }
 
 // Create new grid with size selected by user
@@ -22,7 +23,13 @@ function changeSize(e) {
     createGrid(size);
 }
 
-// Add event listener to individual cells to change their background color when hovered
+// Reset the grid
+function resetGrid() {
+    let size = parseInt(document.querySelector('input[name="size"]:checked').id);
+    createGrid(size);
+}
+
+// Add event listener to individual cells to change their background color when mouse passes over
 function paint() {
     const squares = document.querySelectorAll(".square");
     if (document.querySelector('input[name="color"]:checked').value === "Black") {
@@ -48,21 +55,25 @@ function paintRainbow(e) {
     e.target.style.backgroundColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
 }
 
-// Generate a random number between 0 and 255
+// Generate a random number between 0 and "number"
 function random(number) {
     return Math.floor(Math.random()*number);
   }
 
 // Change the size of the grid through buttons
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".sizes input");
 
 for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", changeSize);
+    buttons[i].addEventListener("change", changeSize);
 }
 
 // Change the color
-const colors = document.querySelectorAll("input");
+const colors = document.querySelectorAll(".color input");
   
 for (let i = 0; i < colors.length; i++) {
     colors[i].addEventListener("input", paint);
 }
+
+// Reset the grid when users click "Reset"
+const resetButton = document.querySelector(".btn");
+resetButton.addEventListener("click", resetGrid)

@@ -14,9 +14,12 @@
     </div>
     <div class="settings">
         <div class="sizes">
-            <button id="16" class="btn">Small</button>
-            <button id="32" class="btn">Medium</button>
-            <button id="64" class="btn">Large</button>
+            <input type="radio" id="16" name="size" value="Small">
+            <label>Small</label><br>
+            <input type="radio" id="32" name="size" value="Medium" checked="checked">
+            <label>Medium</label><br>
+            <input type="radio" id="64" name="size" value="Large">
+            <label>Large</label><br>
         </div>
         <div class="color">
             <input type="radio" id="black" name="color" value="Black" checked="checked">
@@ -24,9 +27,9 @@
             <input type="radio" id="rainbow" name="color" value="Rainbow">
             <label>Rainbow</label><br>
         </div>
-        <!-- <div>
+        <div>
             <button id="reset" class="btn">Reset</button>
-        </div> -->
+        </div>
     </div>
 </body>
 </html>
