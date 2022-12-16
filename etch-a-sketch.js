@@ -4,7 +4,6 @@ const grids = document.querySelector(".grids")
 createGrid(32);
 
 // Create grid with given size
-
 function createGrid(size) {
     grids.innerHTML = "";
     for (let i = 0; i < size*size; i++) {
@@ -35,19 +34,39 @@ function paint() {
     if (document.querySelector('input[name="color"]:checked').value === "Black") {
         for (let i = 0; i < squares.length; i++) {
             squares[i].removeEventListener("mouseenter", paintRainbow); // Remove previous event listeners
+            squares[i].removeEventListener("mouseenter", paintCharcoal);
             squares[i].addEventListener("mouseenter", paintBlack);
         }
     } else if (document.querySelector('input[name="color"]:checked').value === "Rainbow") {
         for (let i = 0; i < squares.length; i++) {
-            squares[i].removeEventListener("mouseenter", paintRainbow);
+            squares[i].removeEventListener("mouseenter", paintBlack);
+            squares[i].removeEventListener("mouseenter", paintCharcoal);
             squares[i].addEventListener("mouseenter", paintRainbow);
+        }
+    } else if (document.querySelector('input[name="color"]:checked').value === "Charcoal") {
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].removeEventListener("mouseenter", paintRainbow);
+            squares[i].removeEventListener("mouseenter", paintBlack);
+            squares[i].addEventListener("mouseenter", paintCharcoal);
         }
     }
 }
 
 // Paint the cell with black
 function paintBlack(e) {
-    e.target.style.backgroundColor = "black";
+    e.target.style.backgroundColor = "rgb(0, 0, 0)";
+}
+
+// Paint the cell in charcoal mode
+function paintCharcoal(e) {
+    let cellBackground = getComputedStyle(e.target).backgroundColor;
+    const regex = /\d\.\d/;
+    if (e.target.style.backgroundColor.match(regex) !== null) {
+        let cellOpacity  = Number(cellBackground.match(regex));
+        e.target.style.backgroundColor = cellBackground.replace(regex, cellOpacity + 0.1);
+    } else if (e.target.style.backgroundColor !== "rgb(0, 0, 0)") {
+        e.target.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+    }
 }
 
 // Paint the cell with a random color

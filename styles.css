@@ -10,7 +10,7 @@ body {
     flex-wrap: wrap;
     height: 600px;
     width: 600px;
-    outline: 2px solid #d8b07d;
+    outline: 2px solid rgb(222, 184, 135);
     margin-bottom: 30px;
 }
 
@@ -19,5 +19,5 @@ body {
 }
 
 .square {
-    outline: 0.1px solid #deb887;
+    outline: 0.1px solid rgb(222, 184, 135, 0.3);
 }
