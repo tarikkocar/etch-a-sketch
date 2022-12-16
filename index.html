@@ -7,29 +7,50 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <script src="etch-a-sketch.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+    </style>
 </head>
 <body>
+    <div class="title">
+        Etch-a-Sketch
+    </div>
+    <div class="sizes">
+        <p>Size</p>
+        <label>
+            <input type="radio" id="16" class="small" name="size" value="Small">
+            <span>Small</span>
+        </label>
+        <label>
+            <input type="radio" id="32" class="medium" name="size" value="Medium" checked="checked">
+            <span>Medium</span>
+        </label>
+        <label>
+            <input type="radio" id="64" class="large" name="size" value="Large">
+            <span>Large</span>
+        </label>
+    </div>
     <div class="grids">
 
     </div>
     <div class="settings">
-        <div class="sizes">
-            <input type="radio" id="16" name="size" value="Small">
-            <label>Small</label><br>
-            <input type="radio" id="32" name="size" value="Medium" checked="checked">
-            <label>Medium</label><br>
-            <input type="radio" id="64" name="size" value="Large">
-            <label>Large</label><br>
-        </div>
         <div class="color">
-            <input type="radio" id="black" name="color" value="Black" checked="checked">
-            <label>Black</label><br>
-            <input type="radio" id="rainbow" name="color" value="Rainbow">
-            <label>Rainbow</label><br>
-            <input type="radio" id="charcoal" name="color" value="Charcoal">
-            <label>Charcoal</label><br>
+            <p>Brush</p>
+            <label>
+                <input type="radio" id="black" name="color" value="Black" checked="checked">
+                <span>Black</span>
+            </label>
+            <label>
+                <input type="radio" id="rainbow" name="color" value="Rainbow">
+                <span>Rainbow</span>
+            </label>
+            <label>
+                <input type="radio" id="charcoal" name="color" value="Charcoal">
+                <span>Charcoal</span>
+            </label>
         </div>
-        <div>
+        <div class="reset">
             <button id="reset" class="btn">Reset</button>
         </div>
     </div>

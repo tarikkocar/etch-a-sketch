@@ -1,8 +1,14 @@
+* {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #f4f4f4;
 }
 
 .grids {
@@ -11,13 +17,120 @@ body {
     height: 600px;
     width: 600px;
     outline: 2px solid rgb(222, 184, 135);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .settings {
     display: flex;
+    justify-content: space-between;
+    width: 600px;
+    /* border: 3px solid rgb(222, 184, 135);
+    padding: 10px; */
 }
 
 .square {
     outline: 0.1px solid rgb(222, 184, 135, 0.3);
+}
+
+.sizes {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+}
+
+button {
+    margin-left: auto;
+    height: 40px;
+    width: 100px;
+    background-color: rgb(222, 184, 135, 0.3);
+    border: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(222, 184, 135);
+    transition: 0.2s;
+}
+
+button:active {
+    background-color: rgb(222, 184, 135, 0.3);
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.color {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.color input {
+    appearance: none;
+    height: 40px;
+    width: 40px;
+    transition: all 0.30s ease-out 0s;
+    background: rgb(222, 184, 135, 0.3);
+    border-radius: 30%;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    position: relative;
+    
+}
+
+.color input:checked {
+    background: rgb(222, 184, 135);;
+}
+
+.sizes {
+    display: flex;
+    align-items: center;
+    width: 600px;
+}
+
+.sizes input {
+    appearance: none;
+    transition: all 0.30s ease-out 0s;
+    background: rgb(222, 184, 135, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    position: relative;
+    
+}
+
+.sizes input:checked {
+    background: rgb(222, 184, 135);
+}
+
+.sizes .small {
+    height: 30px;
+    width: 30px;
+}
+
+.sizes .medium {
+    height: 30px;
+    width: 50px;
+}
+
+.sizes .large {
+    height: 30px;
+    width: 70px;
+}
+
+.title {
+    font-size: 60px;
+    color: rgb(198, 135, 53);
+    margin-bottom: 20px;
 }
